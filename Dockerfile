@@ -2,14 +2,16 @@ FROM python:3.9
 
 # Repo info
 LABEL org.opencontainers.image.source=https://github.com/scc-digitalhub/digitalhub-sdk-wrapper-dbt
-ARG VERSION_LOWER=0.9.0b0
-ARG VERSION_UPPER=0.10.0
+
+ARG ver_sdk=0.9.0b3
+ARG ver_dbt=0.9.0b1
 
 # Set working dir
 WORKDIR /app/
 
 # Install runtime and requirements
-RUN python -m pip install "digitalhub_runtime_dbt[local]>=${VERSION_LOWER}, <${VERSION_UPPER}"
+RUN python -m pip install "digitalhub[pandas]==${ver_sdk}" \
+                          "digitalhub_runtime_dbt[local]==${ver_dbt}"
 
 # Copy wrapper and set entry point
 COPY wrapper.py /app/
