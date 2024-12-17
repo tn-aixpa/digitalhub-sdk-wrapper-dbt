@@ -3,8 +3,8 @@ FROM python:3.9
 # Repo info
 LABEL org.opencontainers.image.source=https://github.com/scc-digitalhub/digitalhub-sdk-wrapper-dbt
 
-ARG ver_sdk=0.9.0b3
-ARG ver_dbt=0.9.0b1
+ARG ver_sdk=0.9.0
+ARG ver_dbt=0.9.0
 
 # Set working dir
 WORKDIR /app/
