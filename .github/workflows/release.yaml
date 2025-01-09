@@ -13,7 +13,7 @@ jobs:
       matrix:
         include:
           - dockerfile: ./Dockerfile
-            image: ghcr.io/${{ github.repository }}/wrapper-dbt
+            image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/wrapper-dbt
             context: .
     permissions:
       contents: read
