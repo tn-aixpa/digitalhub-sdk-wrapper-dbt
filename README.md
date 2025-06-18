@@ -21,8 +21,21 @@ See CONTRIBUTING for contribution instructions.
 To build the container image, you need to have Docker installed. Use the following command to build the image:
 
 ```bash
-docker build .
+docker build -t digitalhub-wrapper-dbt .
 ```
+
+### Launch container
+
+To run the container, use the following command:
+
+```bash
+docker run -e PROJECT_NAME=<project-name> -e RUN_ID=<run-id> digitalhub-wrapper-dbt
+```
+
+Required environment variables:
+
+- `PROJECT`: The name of the project
+- `RUN_ID`: The ID of the run to execute
 
 ## Security Policy
 
